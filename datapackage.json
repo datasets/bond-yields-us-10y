@@ -3,10 +3,13 @@
   "title": "10 year US Government Bond Yields (long-term interest rate)",
   "version": "0.1.0",
   "license": "PDDL-1.0",
-  "sources": [{
-    "name": "Federal Reserve (Release H.15)",
-    "web": "http://www.federalreserve.gov/releases/h15/data.htm"
-  }],
+  "sources": [
+    {
+      "name": "Federal Reserve (Release H.15)",
+      "web": "http://www.federalreserve.gov/releases/h15/data.htm",
+      "title": "Federal Reserve (Release H.15)"
+    }
+  ],
   "resources": [
     {
       "name": "monthly",
@@ -19,7 +22,8 @@
           {
             "name": "Date",
             "type": "date",
-            "description": ""
+            "description": "",
+            "format": "any"
           },
           {
             "name": "Rate",
