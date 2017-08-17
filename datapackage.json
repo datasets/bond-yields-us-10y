@@ -33,12 +33,15 @@
   ],
   "views": [
     {
-      "id": "graph",
-      "type": "Graph",
-      "state": {
-        "graphType": "lines",
+      "name": "graph",
+      "title": "10 year US Government Bond Yields (Monthly granuarlity)",
+      "specType": "simple",
+      "spec": {
+        "type": "line",
         "group": "Date",
-        "series": [ "Rate" ]
+        "series": [
+          "Rate"
+        ]
       }
     }
   ]
