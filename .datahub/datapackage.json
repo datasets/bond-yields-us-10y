@@ -1,0 +1,52 @@
+{
+  "name": "bond-yields-us-10y",
+  "title": "10 year US Government Bond Yields (long-term interest rate)",
+  "version": "0.1.0",
+  "license": "PDDL-1.0",
+  "sources": [
+    {
+      "name": "Federal Reserve (Release H.15)",
+      "web": "http://www.federalreserve.gov/releases/h15/data.htm",
+      "title": "Federal Reserve (Release H.15)"
+    }
+  ],
+  "resources": [
+    {
+      "name": "monthly",
+      "path": "data/monthly.csv",
+      "title": "Annual Market yield on U.S. Treasury securities at 10-year constant maturity, quoted on investment basis. (Monthly granuarlity)",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Date",
+            "type": "date",
+            "description": "",
+            "format": "any"
+          },
+          {
+            "name": "Rate",
+            "type": "number",
+            "format": "percent",
+            "description": "Percent per year"
+          }
+        ]
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "graph",
+      "title": "10 year US Government Bond Yields (Monthly granuarlity)",
+      "specType": "simple",
+      "spec": {
+        "type": "line",
+        "group": "Date",
+        "series": [
+          "Rate"
+        ]
+      }
+    }
+  ]
+}
