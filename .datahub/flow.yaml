@@ -20,4 +20,4 @@ processing:
         - Rate
     output: monthly
 schedule:
-    crontab: '0 0 * * *'
+    crontab: '0 0 1 * *'
