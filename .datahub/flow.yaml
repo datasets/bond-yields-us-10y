@@ -1,0 +1,23 @@
+meta:
+  dataset: bond-yields-us-10y
+  findability: published
+  owner: core
+  ownerid: core
+  version: 1
+inputs:
+- kind: datapackage
+  parameters:
+    resource-mapping:
+      monthly: http://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn
+  url: https://raw.githubusercontent.com/datasets/bond-yields-us-10y/master/.datahub/datapackage.json
+processing:
+  -
+    input: monthly
+    tabulator:
+      skip_rows: 6
+      headers:
+        - Date
+        - Rate
+    output: monthly
+schedule:
+    crontab: '0 0 1 * *'
