@@ -6,10 +6,39 @@ meta:
   version: 1
 inputs:
 - kind: datapackage
+  url: https://raw.githubusercontent.com/datasets/bond-yields-us-10y/master/.datahub/datapackage.json
   parameters:
     resource-mapping:
       monthly: http://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn
-  url: https://raw.githubusercontent.com/datasets/bond-yields-us-10y/master/.datahub/datapackage.json
+    descriptor:
+      name: bond-yields-us-10y
+      title: 10 year US Government Bond Yields (long-term interest rate)
+      version: 0.1.0
+      license: PDDL-1.0
+      sources:
+        -
+          name: Federal Reserve (Release H.15)
+          path: http://www.federalreserve.gov/releases/h15/data.htm
+          title: Federal Reserve (Release H.15)
+      resources:
+        -
+          name: monthly
+          path: data/monthly.csv
+          title: Annual Market yield on U.S. Treasury securities at 10-year constant maturity, quoted on investment basis. (Monthly granuarlity)
+          format: csv
+          mediatype: text/csv
+          schema:
+            fields:
+              -
+                name: Date
+                type: date
+                description: Date in ISO 8601
+                format: any
+              -
+                name: Rate
+                type: number
+                format: percent
+                description: Percent per year            
 processing:
   -
     input: monthly
@@ -19,5 +48,4 @@ processing:
         - Date
         - Rate
     output: monthly
-schedule:
-    crontab: '0 0 1 * *'
+schedule: 'every 1d'
