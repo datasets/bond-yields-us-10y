@@ -48,4 +48,4 @@ processing:
         - Date
         - Rate
     output: monthly
-schedule: 'every 1d'
+schedule: 'every 30d'
