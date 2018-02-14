@@ -37,7 +37,16 @@ inputs:
               -
                 name: Rate
                 type: number
-                description: Percent per year            
+                description: Percent per year
+      views:
+        - name: graph
+          title: 10 year US Government Bond Yields (Monthly granuarlity)
+          specType: simple
+          spec:
+            type: line
+            group: Date
+            series:
+              - Rate     
 processing:
   -
     input: monthly

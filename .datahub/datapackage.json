@@ -28,7 +28,6 @@
           {
             "name": "Rate",
             "type": "number",
-            "format": "percent",
             "description": "Percent per year"
           }
         ]
