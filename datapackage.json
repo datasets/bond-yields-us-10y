@@ -2,7 +2,13 @@
   "name": "bond-yields-us-10y",
   "title": "10 year US Government Bond Yields (long-term interest rate)",
   "version": "0.1.0",
-  "license": "PDDL-1.0",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
   "sources": [
     {
       "name": "Federal Reserve (Release H.15)",
