@@ -13,9 +13,17 @@ csv)][fed-csv].
 
 ## Preparation
 
-Run the shell script:
+You will need Python 3.6 or greater and dataflows library to run the script
 
-    . scripts/process.sh
+To update the data run the process script locally:
+
+```
+# Install dataflows
+pip install dataflows
+
+# Run the script
+python flows/run.py
+```
 
 Note we keep a copy of the raw data from the Federal Reserve (pre-tidying) in
 `archive`.
@@ -26,4 +34,3 @@ Licensed under the [Public Domain Dedication and License][pddl] (assuming
 either no rights or public domain license in source data).
 
 [pddl]: http://opendatacommons.org/licenses/pddl/1.0/
-
