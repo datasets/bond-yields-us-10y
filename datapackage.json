@@ -1,12 +1,43 @@
 {
-  "name": "bond-yields-us-10y",
-  "title": "10 year US Government Bond Yields (long-term interest rate)",
-  "version": "0.1.0",
+  "bytes": 13445,
+  "count_of_rows": 786,
+  "hash": "d338a7666a97a3e22a2dad6e7839404c",
   "licenses": [
     {
-      "name": "ODC-PDDL-1.0",
-      "path": "http://opendatacommons.org/licenses/pddl/",
-      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+      "id": "odc-pddl",
+      "name": "Open Data Commons Public Domain Dedication and License v1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/"
+    }
+  ],
+  "name": "bond-yields-us-10y",
+  "profile": "data-package",
+  "resources": [
+    {
+      "encoding": "utf-8",
+      "format": "aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn",
+      "mediatype": "text/aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn",
+      "name": "monthly",
+      "path": "data/monthly.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "descriptor": "Date in ISO 8601",
+            "format": "any",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "description": "Percent per year",
+            "format": "default",
+            "name": "Rate",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
     }
   ],
   "sources": [
@@ -16,42 +47,20 @@
       "title": "Federal Reserve (Release H.15)"
     }
   ],
-  "resources": [
-    {
-      "name": "monthly",
-      "path": "data/monthly.csv",
-      "title": "Annual Market yield on U.S. Treasury securities at 10-year constant maturity, quoted on investment basis. (Monthly granuarlity)",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "schema": {
-        "fields": [
-          {
-            "name": "Date",
-            "type": "date",
-            "description": "Date in ISO 8601",
-            "format": "any"
-          },
-          {
-            "name": "Rate",
-            "type": "number",
-            "description": "Percent per year"
-          }
-        ]
-      }
-    }
-  ],
+  "title": "10 year US Government Bond Yields (long-term interest rate)",
+  "version": "0.2.0",
   "views": [
     {
       "name": "graph",
-      "title": "10 year US Government Bond Yields (Monthly granuarlity)",
-      "specType": "simple",
       "spec": {
-        "type": "line",
         "group": "Date",
         "series": [
           "Rate"
-        ]
-      }
+        ],
+        "type": "line"
+      },
+      "specType": "simple",
+      "title": "10 year US Government Bond Yields (Monthly granuarlity)"
     }
   ]
 }

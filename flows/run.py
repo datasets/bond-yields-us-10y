@@ -42,7 +42,7 @@ bond_us = Flow(
     ),
     load(
         load_source='http://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn',
-        skip_rows=6,
+        skip_rows=[i+1 for i in range(6)],
         headers=['Date', 'Rate']
     ),
     set_type('Date', type='date', format='any', descriptor='Date in ISO 8601'),
