@@ -1,7 +1,7 @@
 import os
 
-from dataflows import Flow, PackageWrapper, ResourceWrapper, validate
-from dataflows import add_metadata, dump_to_path, load, set_type, update_resource
+from dataflows import Flow, validate, load, set_type, update_resource
+from dataflows import add_metadata, dump_to_path
 
 
 def readme(fpath='README.md'):
