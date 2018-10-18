@@ -1,21 +1,24 @@
 {
   "bytes": 13445,
   "count_of_rows": 786,
-  "hash": "d338a7666a97a3e22a2dad6e7839404c",
+  "hash": "29b9ff8d048342a62f110de35f297bbc",
   "licenses": [
     {
       "id": "odc-pddl",
-      "name": "Open Data Commons Public Domain Dedication and License v1.0",
-      "path": "http://opendatacommons.org/licenses/pddl/"
+      "name": "open_data_commons_public_domain_dedication_and_license_v1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
     }
   ],
   "name": "bond-yields-us-10y",
   "profile": "data-package",
+  "readme": "10 year nominal yields on US government bonds from the Federal Reserve. The 10\nyear government bond yield is considered a standard indicator of long-term\ninterest rates.\n\n## Data\n\nData comes from the [Release H.15 from the Federal Reserve - Selected Interest\nRates Daily][fed] specifically the [10 year US Treasury (monthly,\ncsv)][fed-csv].\n\n[fed]: http://www.federalreserve.gov/releases/h15/data.htm\n[fed-csv]: http://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn\n\n## Preparation\n\nYou will need Python 3.6 or greater and dataflows library to run the script\n\nTo update the data run the process script locally:\n\n```\n# Install dataflows\npip install dataflows\n\n# Run the script\npython flows/run.py\n```\n\nNote we keep a copy of the raw data from the Federal Reserve (pre-tidying) in\n`archive`.\n\n# License\n\nLicensed under the [Public Domain Dedication and License][pddl] (assuming\neither no rights or public domain license in source data).\n\n[pddl]: http://opendatacommons.org/licenses/pddl/1.0/\n",
   "resources": [
     {
+      "dpp:streaming": true,
       "encoding": "utf-8",
-      "format": "aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn",
-      "mediatype": "text/aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn",
+      "format": "csv",
+      "mediatype": "text/csv",
       "name": "monthly",
       "path": "data/monthly.csv",
       "profile": "tabular-data-resource",

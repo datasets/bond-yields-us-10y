@@ -1,15 +1,12 @@
+import os
+
 from dataflows import Flow, PackageWrapper, ResourceWrapper, validate
-from dataflows import add_metadata, dump_to_path, load, set_type, printer
+from dataflows import add_metadata, dump_to_path, load, set_type, update_resource
 
 
-def rename(package: PackageWrapper):
-    package.pkg.descriptor['resources'][0]['name'] = 'monthly'
-    package.pkg.descriptor['resources'][0]['path'] = 'data/monthly.csv'
-    yield package.pkg
-    res_iter = iter(package)
-    first: ResourceWrapper = next(res_iter)
-    yield first.it
-    yield from package
+def readme(fpath='README.md'):
+    if os.path.exists(fpath):
+        return open(fpath).read()
 
 
 bond_us = Flow(
@@ -28,7 +25,8 @@ bond_us = Flow(
             {
               "id": "odc-pddl",
               "path": "http://opendatacommons.org/licenses/pddl/",
-              "name": "Open Data Commons Public Domain Dedication and License v1.0"
+              "title": "Open Data Commons Public Domain Dedication and License v1.0",
+              'name': "open_data_commons_public_domain_dedication_and_license_v1.0"
             }
         ],
         views=[
@@ -38,20 +36,26 @@ bond_us = Flow(
               "specType": "simple",
               "spec": {"type": "line","group": "Date","series": ["Rate"]}
             }
-        ]
+        ],
+        readme=readme()
     ),
     load(
         load_source='http://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn',
         skip_rows=[i+1 for i in range(6)],
-        headers=['Date', 'Rate']
+        headers=['Date', 'Rate'],
+        format='csv',
+        name='monthly'
     ),
     set_type('Date', type='date', format='any', descriptor='Date in ISO 8601'),
     set_type('Rate', type='number', description='Percent per year'),
-    rename,
+    update_resource('monthly', **{'path':'data/monthly.csv', 'dpp:streaming': True}),
     validate(),
-    printer(),
     dump_to_path(),
 )
+
+
+def flow(parameters, datapackage, resources, stats):
+    return bond_us
 
 
 if __name__ == '__main__':
