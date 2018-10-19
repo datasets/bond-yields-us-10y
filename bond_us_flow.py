@@ -1,7 +1,6 @@
 import os
 
-from dataflows import Flow, validate, load, set_type, update_resource
-from dataflows import add_metadata, dump_to_path
+from dataflows import Flow, validate, load, set_type, update_resource, add_metadata
 
 
 def readme(fpath='README.md'):
@@ -49,8 +48,7 @@ bond_us = Flow(
     set_type('Date', type='date', format='any', descriptor='Date in ISO 8601'),
     set_type('Rate', type='number', description='Percent per year'),
     update_resource('monthly', **{'path':'data/monthly.csv', 'dpp:streaming': True}),
-    validate(),
-    dump_to_path(),
+    validate()
 )
 
 
