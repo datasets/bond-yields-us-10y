@@ -3,4 +3,4 @@ bond-us-flow:
     - flow: bond_us_flow
     - run: datahub.dump.to_datahub
   schedule:
-    crontab: 0 0 1 * * *
+    crontab: 0 0 1 * *
