@@ -22,7 +22,7 @@ To update the data run the process script locally:
 pip install dataflows
 
 # Run the script
-python flows/run.py
+python bond_us_flow.py
 ```
 
 Note we keep a copy of the raw data from the Federal Reserve (pre-tidying) in
