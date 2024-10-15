@@ -55,7 +55,9 @@
   "views": [
     {
       "name": "graph",
-      "resources": ["monthly"],
+      "resources": [
+        "monthly"
+      ],
       "spec": {
         "group": "Date",
         "series": [
@@ -66,5 +68,6 @@
       "specType": "simple",
       "title": "10 year US Government Bond Yields (Monthly granuarlity)"
     }
-  ]
+  ],
+  "collection": "economic-data"
 }
