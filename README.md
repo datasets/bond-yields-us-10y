@@ -1,3 +1,5 @@
+<a href="https://datahub.io/core/bond-yields-us-10y"><img src="https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25)" alt="badge" /></a>
+
 10 year nominal yields on US government bonds from the Federal Reserve. The 10
 year government bond yield is considered a standard indicator of long-term
 interest rates.
