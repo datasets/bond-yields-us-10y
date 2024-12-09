@@ -20,15 +20,22 @@ You will need Python 3.6 or greater and dataflows library to run the script
 To update the data run the process script locally:
 
 ```
-# Install dataflows
-pip install dataflows
+# Install necessary libraries
+pip install -r scripts/requirements.txt
+
+# Update the data
+./scripts/process.sh
 
 # Run the script
-python bond_us_flow.py
+python scripts/bond_us_flow.py
 ```
 
 Note we keep a copy of the raw data from the Federal Reserve (pre-tidying) in
 `archive`.
+
+## Automation
+
+Up-to-date (auto-updates every month) bond-yields-us-10y dataset could be found on the datahub.io: https://datahub.io/core/bond-yields-us-10y
 
 # License
 
