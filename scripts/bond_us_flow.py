@@ -31,12 +31,14 @@ bond_us = Flow(
         views=[
             {
               "name": "graph",
+              "resources": ["monthly"],
               "title": "10 year US Government Bond Yields (Monthly granuarlity)",
               "specType": "simple",
               "spec": {"type": "line","group": "Date","series": ["Rate"]}
             }
         ],
-        readme=readme()
+        readme=readme(),
+        collection="economic-data"
     ),
     load(
         load_source='http://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn',
