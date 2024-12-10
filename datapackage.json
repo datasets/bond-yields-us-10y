@@ -1,7 +1,8 @@
 {
   "bytes": 14703,
+  "collection": "economic-data",
   "count_of_rows": 860,
-  "hash": "0660458f19c142e55dc64ef434f5d334",
+  "hash": "88c5b04bfafdc63439d2ab4a91c3aa62",
   "licenses": [
     {
       "id": "odc-pddl",
@@ -28,7 +29,7 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "71296c81b6be46fc311dc969eb6b13e1",
+      "hash": "a0bf40182182833ee7b113b136234cc4",
       "name": "monthly",
       "path": "data/monthly.csv",
       "profile": "tabular-data-resource",
@@ -67,6 +68,9 @@
   "views": [
     {
       "name": "graph",
+      "resources": [
+        "monthly"
+      ],
       "spec": {
         "group": "Date",
         "series": [
