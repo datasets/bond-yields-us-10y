@@ -2,7 +2,7 @@
   "bytes": 14703,
   "collection": "economic-data",
   "count_of_rows": 860,
-  "hash": "5fd7999ec23c5a178cb978b018931ada",
+  "hash": "50d6605203f0630623de58391ec6cfe8",
   "licenses": [
     {
       "id": "odc-pddl",
@@ -29,7 +29,7 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "6fdad1a544efaf2c13fb7e3d8bebd2d8",
+      "hash": "b99ca98484e53ca2272b179caea0ff9c",
       "name": "monthly",
       "path": "data/monthly.csv",
       "profile": "tabular-data-resource",
