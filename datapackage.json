@@ -1,8 +1,8 @@
 {
-  "bytes": 14856,
+  "bytes": 14873,
   "collection": "economic-data",
-  "count_of_rows": 869,
-  "hash": "7c33cdc4d815217edae7320aa0d977f2",
+  "count_of_rows": 870,
+  "hash": "31a966d414814bac66e168d43fc5844f",
   "licenses": [
     {
       "id": "odc-pddl",
@@ -16,7 +16,7 @@
   "readme": "<a className=\"gh-badge\" href=\"https://datahub.io/core/bond-yields-us-10y\"><img src=\"https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25\" alt=\"badge\" /></a>\n\n10 year nominal yields on US government bonds from the Federal Reserve. The 10\nyear government bond yield is considered a standard indicator of long-term\ninterest rates.\n\n## Data\n\nData comes from the [Release H.15 from the Federal Reserve - Selected Interest\nRates Daily][fed] specifically the [10 year US Treasury (monthly,\ncsv)][fed-csv].\n\n[fed]: http://www.federalreserve.gov/releases/h15/data.htm\n[fed-csv]: http://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=0809abf197c17f1ff0b2180fe7015cc3&lastObs=&from=&to=&filetype=csv&label=include&layout=seriescolumn\n\n## Preparation\n\nYou will need Python 3.6 or greater and dataflows library to run the script\n\nTo update the data run the process script locally:\n\n```\n# Install necessary libraries\npip install -r scripts/requirements.txt\n\n# Update the data\n./scripts/process.sh\n\n# Run the script\npython scripts/bond_us_flow.py\n```\n\nNote we keep a copy of the raw data from the Federal Reserve (pre-tidying) in\n`archive`.\n\n## Automation\n\nUp-to-date (auto-updates every month) bond-yields-us-10y dataset could be found on the datahub.io: https://datahub.io/core/bond-yields-us-10y\n\n# License\n\nLicensed under the [Public Domain Dedication and License][pddl] (assuming\neither no rights or public domain license in source data).\n\n[pddl]: http://opendatacommons.org/licenses/pddl/1.0/\n",
   "resources": [
     {
-      "bytes": 14856,
+      "bytes": 14873,
       "dialect": {
         "caseSensitiveHeader": false,
         "delimiter": ",",
@@ -29,7 +29,7 @@
       "dpp:streaming": true,
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "b7c9c4f1492518376c0e3dd00b7afd56",
+      "hash": "88bd4221b2d37d77a199d9c6ec018d24",
       "name": "monthly",
       "path": "data/monthly.csv",
       "profile": "tabular-data-resource",
