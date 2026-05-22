@@ -1,0 +1,2 @@
+# Enforce LF line endings for data files
+*.csv text eol=lf
